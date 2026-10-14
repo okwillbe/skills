@@ -1,0 +1,39 @@
+{
+  "generation_id": "gen-20261014-pydantic-demo",
+  "document": "content/learning/pydantic/20261014-pydantic-quickstart.md",
+  "generated_at": "2026-10-14T10:12:00Z",
+  "generator": {
+    "name": "generate-learning-material-advanced",
+    "version": "0.1.0",
+    "model": "gpt-4o",
+    "prompt_path": "prompt-templates/pydantic_learning_prompt.md",
+    "prompt_sha256": "demo-sha256",
+    "model_params": {
+      "temperature": 0.2,
+      "max_tokens": 4000
+    }
+  },
+  "input": {
+    "topic": "pydantic",
+    "audience": "有 Python 基础的初学者",
+    "goal": "1 小时速成，能做基本数据验证"
+  },
+  "references": [
+    {
+      "url": "https://docs.pydantic.dev/",
+      "title": "Pydantic 官方文档",
+      "fetched_at": "2026-10-14T09:50:00Z",
+      "sha256": "demo-ref-sha256"
+    }
+  ],
+  "quality_checks": {
+    "toc_present": true,
+    "examples_count": 3,
+    "exercises_count": 2,
+    "issues": []
+  },
+  "warnings": [
+    "v1/v2 差异需人工确认"
+  ],
+  "commit_sha": "demo-commit-sha"
+}
