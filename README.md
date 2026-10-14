@@ -1,29 +1,28 @@
 # skills
 
-这是一个存放可复用 "skills"（技能/模板/流程）的仓库。每个 skill 都是可复用的模板、提示词和流程，用来把零散的知识或 AI 输出组织成可学习、可维护的知识产物。
+这是一个存放可复用 "skills"（技能/模板/流程）的仓库。每个 skill 都是一个可复用的模板、提示词或流程，用来把零散知识、文档或 AI 输出整理成可学习、可维护、可验证的知识产物。
 
 当前状态
-- 仓库主页: https://github.com/okwillbe/skills
-- 本仓库以中文为主文档语言（可双语贡献）。
-- 当前只实现并维护第一个 skill：learning/generate-learning-material（用于生成结构化学习资料）。
+- 仓库：https://github.com/okwillbe/skills
+- 当前聚焦的第一个 skill：`learning/generate-learning-material`
+- 它用于解决“AI 生成的学习资料结构混乱、缺来源、缺解释、缺审计和更新策略”的问题。
 
-目录结构（简要）
-- skills/                    ← skill 模板与具体 skill 的所在目录
-  - learning/                ← learning 类 skill 的集合
-    - generate-learning-material/ ← 第一个 skill 的目录
-      - generate-learning-material.md ← skill 文件（详述输入/输出/流程/质量检查/示例 prompt）
-- prompt-templates/          ← 可直接复用的 prompt 模板
-- content/                   ← 生成的学习资料（由 skill 产出，放在此处）
-- content/snapshots/         ← 引用来源的快照（可选，但建议保存以便审计）
-- logs/                      ← 生成日志（记录每次生成的元数据）
-- tools/                     ← 校验脚本与辅助工具（如 snapshot fetcher）
+仓库结构
+- `README.md` — 仓库级说明
+- `skills/learning/generate-learning-material/generate-learning-material.md` — 第一个 skill（当前重点）
+- `prompt-templates/` — 可直接复用的 prompt 模板
+- `content/` — 生成的学习资料
+- `content/snapshots/` — 引用资源的来源快照（建议保存）
+- `logs/` — 生成日志（生成时间、模型、来源、质量检查等）
+- `tools/` — 校验脚本和辅助工具
+- `.github/workflows/` — CI 校验工作流
 
-使用说明
-1. 查阅 `skills/learning/generate-learning-material/generate-learning-material.md` 了解第一个 skill 的输入/输出与使用流程；
-2. 使用 prompt 模板（位于 `prompt-templates/`）调用 LLM 生成文档草稿；
-3. 将生成的文档放入 `content/` 后提交 PR；CI 会验证 frontmatter 与质量检查项；
-4. 审核通过后合并，生成日志会写入 `logs/generation-log.json` 以便追溯。
+当前重点
+- 这个仓库目前只实现并维护一个 skill：`generate-learning-material`
+- 后续可以依照同样模式扩展更多 skill（如 `research`, `design`, `problem-solving` 等）
 
-贡献
-- 欢迎以 PR 形式提交新的 skill 或改进现有 skill。请确保每个 skill 文件遵循 `skills/skill-template.md` 中的 frontmatter 规范。
-
+开始使用
+1. 阅读 `skills/learning/generate-learning-material/generate-learning-material.md`
+2. 按 skill 中的流程生成学习资料草稿
+3. 将输出保存到 `content/` 下，附上生成日志
+4. 通过 PR 提交，后续可由 CI 校验前置元数据和基本质量要求
